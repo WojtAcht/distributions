@@ -139,7 +139,7 @@ elif distribution == "geometric":
     params = {"p": p}
 
 elif distribution == "exponential":
-    st.latex(r"f(x) = \lambda e^{-\lambda x}")
+    st.latex(r"f(x) = \lambda e^{-\lambda x} \text{ dla } x \geq 0")
     rate = st.number_input(
         "λ (Wskaźnik intensywności)", min_value=0.1, value=1.0, step=0.1
     )
