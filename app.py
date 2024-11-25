@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import math
 import pandas as pd
 import plotly.express as px
 
@@ -15,9 +16,9 @@ def calculate_distribution(distribution, params):
         variance = lambd
 
         for k in range(0, max(10, int(lambd * 2))):
-            prob = (lambd**k * np.exp(-lambd)) / np.math.factorial(k)
+            prob = (lambd**k * np.exp(-lambd)) / math.factorial(k)
             cumulative_prob = sum(
-                (lambd**i * np.exp(-lambd)) / np.math.factorial(i) for i in range(k + 1)
+                (lambd**i * np.exp(-lambd)) / math.factorial(i) for i in range(k + 1)
             )
             theoretical_data.append(
                 {"x": k, "probability": prob, "cumulative": cumulative_prob}
@@ -29,9 +30,9 @@ def calculate_distribution(distribution, params):
         variance = n * p * (1 - p)
 
         for k in range(n + 1):
-            prob = np.math.comb(n, k) * (p**k) * ((1 - p) ** (n - k))
+            prob = math.comb(n, k) * (p**k) * ((1 - p) ** (n - k))
             cumulative_prob = sum(
-                np.math.comb(n, i) * (p**i) * ((1 - p) ** (n - i)) for i in range(k + 1)
+                math.comb(n, i) * (p**i) * ((1 - p) ** (n - i)) for i in range(k + 1)
             )
             theoretical_data.append(
                 {"x": k, "probability": prob, "cumulative": cumulative_prob}
@@ -85,7 +86,7 @@ def calculate_distribution(distribution, params):
             density = (1 / (np.sqrt(2 * np.pi) * sigma)) * np.exp(
                 -((x - mu) ** 2) / (2 * sigma**2)
             )
-            cumulative_prob = (1 + np.math.erf((x - mu) / (np.sqrt(2) * sigma))) / 2
+            cumulative_prob = (1 + math.erf((x - mu) / (np.sqrt(2) * sigma))) / 2
             theoretical_data.append(
                 {"x": x, "density": density, "cumulative": cumulative_prob}
             )
