@@ -19,7 +19,7 @@ $$
 f(x, y) = \\frac{1}{2\\pi\\sqrt{\\det(\\Sigma)}} \\exp\\left(-\\frac{1}{2} \\mathbf{z}^T \\Sigma^{-1} \\mathbf{z}\\right)
 $$
 
-where \( \\mathbf{z} = \\begin{pmatrix} x - \\mu_x \\\\ y - \\mu_y \\end{pmatrix} \) and \( \\Sigma \) is the covariance matrix.
+where $ \\mathbf{z} = \\begin{pmatrix} x - \\mu_x \\\\ y - \\mu_y \\end{pmatrix} $ and $ \\Sigma $ is the covariance matrix.
 """
 )
 
